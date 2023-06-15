@@ -62,29 +62,23 @@ public class TicketService {
 
 
     public Ticket updateTicket(Long ticketId, TicketUpdateRequest request) {
+
         Optional<Ticket> optionalTicket = ticketRepository.findByIdOptional(ticketId);
 
-        Ticket ticket;
         if (optionalTicket.isPresent()) {
-
-            ticket = optionalTicket.get();
+            Ticket ticket;
             Category category = categoryRepository.getById(request.categoryId);
+            ticket = optionalTicket.get();
             ticket.description = request.description;
             ticket.userBusiness = request.userBusiness;
             ticket.category = category;
-
             if (request.fileRequest != null) {
-                if (ticket.file != null) {
-                    fileService.delete(ticket.file.id);
-                }
                 ticket.file = fileService.create(request.fileRequest);
             }
-
             ticket.persist();
 
             return ticket;
         } else {
-            //handle exception here
             throw new NotFoundException("Ticket not found with ID: " + ticketId);
         }
     }

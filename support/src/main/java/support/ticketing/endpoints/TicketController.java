@@ -27,7 +27,6 @@ public class TicketController {
     TicketService service;
 
     @POST
-    @Path("/create")
     @Operation(summary = "create a new ticket", description = "This will create a new ticket.")
     public Response createTicket(TicketRequest request, @Context HttpServerRequest httpRequest, @Context SecurityContext ctx) {
         return Response.ok(new ResponseMessage("Created Successfully",service.create(request,httpRequest,ctx))).build();
