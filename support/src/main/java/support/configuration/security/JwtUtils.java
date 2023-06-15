@@ -46,6 +46,10 @@ public class JwtUtils {
 
     }
 
+    public JsonWebToken getJwt(){
+        return jwt;
+    }
+
     public String getUserNameFromJwtToken(String token) {
 
         try {

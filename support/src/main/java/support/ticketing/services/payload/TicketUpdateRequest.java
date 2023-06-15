@@ -2,6 +2,7 @@ package support.ticketing.services.payload;
 
 import io.smallrye.common.constraint.NotNull;
 import support.ticket.domains.FileResource;
+import support.ticket.fileresource.service.payload.FileRequest;
 
 public class TicketUpdateRequest {
 
@@ -14,6 +15,5 @@ public class TicketUpdateRequest {
 
     public Long categoryId;
 
-    public String version;
-
+    public FileRequest fileRequest;
 }

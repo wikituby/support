@@ -19,7 +19,7 @@ import support.ticketing.services.payload.TicketUpdateRequest;
 
 import java.util.List;
 @Path("/ticket")
-@Tag(name = "Arxcess  - Support", description = "This will create a new ticket")
+@Tag(name = "Ticket - Resource", description = "This will create a new ticket")
 
 public class TicketController {
 
@@ -35,8 +35,8 @@ public class TicketController {
     @PUT
     @Path("{id}")
     @Operation(summary = "update a ticket", description = "This will update an existing ticket.")
-    public Response updateTicket(@PathParam("id") Long id, TicketUpdateRequest request, @Context HttpServerRequest httpRequest, @Context SecurityContext ctx) {
-        return Response.ok(new ResponseMessage("Updated Successfully",service.updateTicket(request,httpRequest,ctx))).build();
+    public Response updateTicket(@PathParam("id") Long id, TicketUpdateRequest request) {
+        return Response.ok(new ResponseMessage("Updated Successfully",service.updateTicket(id,request))).build();
 
     }
 
