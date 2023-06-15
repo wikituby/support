@@ -66,9 +66,9 @@ public class TicketService {
 
         Ticket ticket;
         if (optionalTicket.isPresent()) {
-            Category category = categoryRepository.getById(request.categoryId);
 
             ticket = optionalTicket.get();
+            Category category = categoryRepository.getById(request.categoryId);
             ticket.description = request.description;
             ticket.userBusiness = request.userBusiness;
             ticket.category = category;
