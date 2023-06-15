@@ -84,7 +84,7 @@ public class TicketService {
 
             return ticket;
         } else {
-            //handle exception
+            //handle exception here
             throw new NotFoundException("Ticket not found with ID: " + ticketId);
         }
     }
