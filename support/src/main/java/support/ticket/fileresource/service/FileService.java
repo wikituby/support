@@ -49,7 +49,6 @@ public class FileService {
         return fileResourceRepository.getById(id).data;
 
     }
-
     public byte[] getFileByUrl(String url) {
 
         return fileResourceRepository.getByUrl(PATH + url).data;

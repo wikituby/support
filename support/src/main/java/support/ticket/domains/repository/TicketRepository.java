@@ -3,7 +3,11 @@ package support.ticket.domains.repository;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import io.quarkus.panache.common.Sort;
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.transaction.Transactional;
 import support.ticket.domains.Ticket;
+import support.ticketing.services.payload.TicketFilterRequest;
+
+import java.util.List;
 
 @ApplicationScoped
 public class TicketRepository implements PanacheRepository<Ticket> {
@@ -21,4 +25,5 @@ public class TicketRepository implements PanacheRepository<Ticket> {
         int nextNum = Integer.parseInt(number) + 1;
         return String.format("%s%06d",appType, nextNum);
     }
+
 }
