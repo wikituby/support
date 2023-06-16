@@ -38,7 +38,7 @@ public class TicketController {
         return Response.ok(new ResponseMessage("Updated Successfully",service.updateTicket(id,request))).build();
     }
     @GET
-    @Operation(summary = "Filter tickets by userBusiness, email and applicationType", description = "This will update an existing ticket.")
+    @Operation(summary = "Filter tickets by userBusiness, email & applicationType", description = "This will update an existing ticket.")
     public Response filterTickets(TicketFilterRequest filterRequest) {
         return Response.ok(new ResponseMessage("filtered Successfully",service.findTicketsByFilter(filterRequest))).build();
     }
