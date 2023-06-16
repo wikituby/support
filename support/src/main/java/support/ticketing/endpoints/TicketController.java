@@ -10,8 +10,6 @@ import jakarta.ws.rs.core.SecurityContext;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 import support.configuration.handler.ResponseMessage;
-import support.ticket.domains.Ticket;
-import support.ticket.domains.repository.TicketRepository;
 import support.ticketing.services.TicketService;
 import support.ticketing.services.payload.TicketFilterRequest;
 import support.ticketing.services.payload.TicketRequest;
